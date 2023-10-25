@@ -1,9 +1,8 @@
 # Darwin Seguros - Pipeline
 
-<!---
+
 [![CircleCI Build Status](https://circleci.com/gh/darwin-seguros/pipeline.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/darwin-seguros/pipeline) [![CircleCI Orb Version](https://badges.circleci.com/orbs/darwin-seguros/pipeline.svg)](https://circleci.com/developer/orbs/orb/darwin-seguros/pipeline) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/darwin-seguros/pipeline/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
---->
 
 Pipeline's CircleCI Orb.
 
