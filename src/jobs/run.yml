@@ -10,4 +10,4 @@ parameters:
 
 steps:
   - quality:
-      quality-check: << parameters.quality_check >>
+      quality_check: << parameters.quality_check >>
