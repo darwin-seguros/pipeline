@@ -1,0 +1,733 @@
+{
+    "items": [
+        {
+            "id": "0evx68uic2",
+            "name": "bff-backoffice",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-21T16:40:55-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "policy": "{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":\\\"*\\\",\\\"Action\\\":\\\"execute-api:Invoke\\\",\\\"Resource\\\":\\\"*\\\"}]}",
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/bff-backoffice-apigw/a2b1a710-405a-11ee-922c-0e0a3965bf6b",
+                "aws:cloudformation:stack-name": "bff-backoffice-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "18t607v3yb",
+            "name": "document-manager",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-11T12:59:45-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "policy": "{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":\\\"*\\\",\\\"Action\\\":\\\"execute-api:Invoke\\\",\\\"Resource\\\":\\\"*\\\"}]}",
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/document-manager-apigw/15311c60-3860-11ee-987e-0e5be7210e3d",
+                "aws:cloudformation:stack-name": "document-manager-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "27l20f5180",
+            "name": "darwin-api",
+            "description": "The Darwin API documentation",
+            "createdDate": "2023-08-10T19:50:41-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/darwin-api-apigw/52aed9a0-37d0-11ee-bcd5-0a8dc865b5ff",
+                "aws:cloudformation:stack-name": "darwin-api-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "2v807pmkwi",
+            "name": "push-manager",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-11T11:27:19-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/push-manager-apigw/2b65b1b0-3853-11ee-9fc5-0a88033adbf3",
+                "aws:cloudformation:stack-name": "push-manager-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "4rkpusrsr6",
+            "name": "ticket-api",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-10T15:57:44-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/ticket-api-apigw/c7a1fab0-37af-11ee-ba8b-0a6dfb2464f9",
+                "aws:cloudformation:stack-name": "ticket-api-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "9aoznjctyj",
+            "name": "payment-api",
+            "description": "The Darwin Payment API documentation",
+            "createdDate": "2023-08-11T13:47:38-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/payment-api-apigw/c58ee500-3866-11ee-85b9-0a35cd088b3d",
+                "aws:cloudformation:stack-name": "payment-api-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "9l2eagc4z2",
+            "name": "insurance-api",
+            "createdDate": "2023-08-10T21:38:31-03:00",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/insurance-api-apigw/6357fed0-37df-11ee-b3da-0e798d5724d7",
+                "aws:cloudformation:stack-name": "insurance-api-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "9zh0q62v65",
+            "name": "jaiminho",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-11T10:33:09-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/jaiminho-apigw/9a6fb9a0-384b-11ee-948a-0ad09eb9c5c3",
+                "aws:cloudformation:stack-name": "jaiminho-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "axq4sl70g0",
+            "name": "common-api",
+            "description": "Provê serviços de informações de uso comum para qualquer outra API Darwin.",
+            "createdDate": "2023-08-11T12:00:15-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/common-api-apigw/c4de0960-3857-11ee-bc8c-1265ae7940fd",
+                "aws:cloudformation:stack-name": "common-api-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "b51154rerg",
+            "name": "quote-api",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-10T22:13:45-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/quote-api-apigw/4fa971c0-37e4-11ee-a905-12168ac5a8eb",
+                "aws:cloudformation:stack-name": "quote-api-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "bfym4dbp86",
+            "name": "cognito_acc_recovery",
+            "description": "user if users forget passwords or if temp passwords expire",
+            "createdDate": "2023-09-18T10:32:35-03:00",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "EDGE"
+                ]
+            },
+            "tags": {
+                "Description": "Resource created by Terraform",
+                "Environment": "dev",
+                "Region": "us-east-1",
+                "Stack": "cognito-custom",
+                "api": "cognito-custom"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "bj6r79y8va",
+            "name": "checklist-api",
+            "description": "The Checklist API documentation",
+            "createdDate": "2023-08-11T11:05:45-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "policy": "{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":{\\\"AWS\\\":\\\"*\\\"},\\\"Action\\\":\\\"execute-api:Invoke\\\",\\\"Resource\\\":\\\"*\\\"}]}",
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/checklist-api-apigw/284edc20-3850-11ee-8d48-0a6b9955ff95",
+                "aws:cloudformation:stack-name": "checklist-api-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "bxxo7wnzy6",
+            "name": "infocar",
+            "createdDate": "2023-08-25T11:36:14-03:00",
+            "version": "1.0",
+            "binaryMediaTypes": [
+                "application/octet-stream",
+                "application/x-tar",
+                "application/zip",
+                "audio/basic",
+                "audio/ogg",
+                "audio/mp4",
+                "audio/mpeg",
+                "audio/wav",
+                "audio/webm",
+                "image/png",
+                "image/jpg",
+                "image/jpeg",
+                "image/gif",
+                "video/ogg",
+                "video/mpeg",
+                "video/webm"
+            ],
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "Description": "Resource created by Terraform",
+                "Environment": "dev",
+                "Region": "us-east-1",
+                "Stack": "darwin-st-infocar",
+                "api": "infocar"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "dwk3yb96b0",
+            "name": "backup-cognito-users",
+            "createdDate": "2023-09-22T15:21:17-03:00",
+            "version": "1.0",
+            "binaryMediaTypes": [
+                "application/octet-stream",
+                "application/x-tar",
+                "application/zip",
+                "audio/basic",
+                "audio/ogg",
+                "audio/mp4",
+                "audio/mpeg",
+                "audio/wav",
+                "audio/webm",
+                "image/png",
+                "image/jpg",
+                "image/jpeg",
+                "image/gif",
+                "video/ogg",
+                "video/mpeg",
+                "video/webm"
+            ],
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "EDGE"
+                ]
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "e6ptv2zcaf",
+            "name": "checklist-cancellation",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-11T10:37:58-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/checklist-cancellation-apigw/471284d0-384c-11ee-bffe-121b9963abc9",
+                "aws:cloudformation:stack-name": "checklist-cancellation-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "egii41dysa",
+            "name": "antifraud-api",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-10T16:53:07-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "policy": "{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":\\\"*\\\",\\\"Action\\\":\\\"execute-api:Invoke\\\",\\\"Resource\\\":\\\"*\\\"}]}",
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/antifraud-api-apigw/84347fc0-37b7-11ee-97db-0e2a0bfcc015",
+                "aws:cloudformation:stack-name": "antifraud-api-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "fg6y8n3mm0",
+            "name": "neurotech",
+            "createdDate": "2021-11-04T17:13:31-03:00",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "gvou0l7zzc",
+            "name": "darwin-b2b",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-10T22:32:11-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/darwin-b2b-apigw/e28cd430-37e6-11ee-8195-0e794ebd7951",
+                "aws:cloudformation:stack-name": "darwin-b2b-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "h5jamk8fw6",
+            "name": "search-api",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-22T13:45:21-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "Description": "Resource created by Terraform",
+                "Environment": "dev",
+                "Region": "us-east-1",
+                "Stack": "darwin-st-search-api",
+                "api": "search-api"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "h6hmxqy646",
+            "name": "checklist-renewal",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-11T11:11:49-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/checklilst-renewal-apigw/0119ab70-3851-11ee-86fb-0a2fa288f2f7",
+                "aws:cloudformation:stack-name": "checklilst-renewal-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "humjh61wyc",
+            "name": "telemetry-api",
+            "description": "Documentação da API de Telemetria",
+            "createdDate": "2023-08-10T23:06:46-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "policy": "{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":{\\\"AWS\\\":\\\"*\\\"},\\\"Action\\\":\\\"execute-api:Invoke\\\",\\\"Resource\\\":\\\"*\\\"}]}",
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/telemetry-api-apigw/b7ccd240-37eb-11ee-b62c-0ea9e1d99c41",
+                "aws:cloudformation:stack-name": "telemetry-api-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "iubik2s4k2",
+            "name": "test",
+            "description": "test",
+            "createdDate": "2022-05-16T09:22:13-03:00",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "j6cmbvla93",
+            "name": "support-api",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-23T11:55:24-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "Description": "Resource created by Terraform",
+                "Environment": "dev",
+                "Region": "us-east-1",
+                "Stack": "darwin-st-support-api",
+                "api": "support-api"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "l3sydskqy5",
+            "name": "lead-api",
+            "description": "API para coletar leads",
+            "createdDate": "2023-08-11T10:52:16-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/lead-api-apigw/46143cc0-384e-11ee-94b9-0e9808eb7437",
+                "aws:cloudformation:stack-name": "lead-api-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "le8prq1owg",
+            "name": "ebao",
+            "createdDate": "2021-11-07T20:22:58-03:00",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "mayjvks89l",
+            "name": "bff-broker-portal",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-11T10:04:23-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "policy": "{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":\\\"*\\\",\\\"Action\\\":\\\"execute-api:Invoke\\\",\\\"Resource\\\":\\\"*\\\"}]}",
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/bff-broker-portal-apigw/95d3c020-3847-11ee-a487-0a108ac6c38f",
+                "aws:cloudformation:stack-name": "bff-broker-portal-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "osc7q4gl60",
+            "name": "serverlessrepo-portal-backend-api",
+            "createdDate": "2023-08-21T12:14:58-03:00",
+            "version": "2016-09-02 22:37:24+00:00",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "policy": "{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":{\\\"AWS\\\":\\\"*\\\"},\\\"Action\\\":\\\"execute-api:Invoke\\\",\\\"Resource\\\":\\\"*\\\"}]}",
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "pcsilcf1u9",
+            "name": "campaign-manager",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-10T22:51:09-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/campaign-manager-apigw/88e990a0-37e9-11ee-b366-0e03925a3515",
+                "aws:cloudformation:stack-name": "campaign-manager-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "ro0z9v74q5",
+            "name": "infocar",
+            "description": "Created by AWS Lambda",
+            "createdDate": "2021-11-04T21:41:15-03:00",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "rrfvmmq5ya",
+            "name": "bff-app",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-10T21:17:54-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/bff-app-apigw/81d86780-37dc-11ee-a48a-0ea5c6bcdafb",
+                "aws:cloudformation:stack-name": "bff-app-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "tuynqdnlp9",
+            "name": "assist-api",
+            "description": "API para comunicação de assistências",
+            "createdDate": "2023-08-11T09:52:02-03:00",
+            "version": "1.0.0",
+            "binaryMediaTypes": [
+                "multipart/form-data"
+            ],
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "policy": "{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":\\\"*\\\",\\\"Action\\\":\\\"execute-api:Invoke\\\",\\\"Resource\\\":\\\"*\\\"}]}",
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/assist-api-apigw/dbb47640-3845-11ee-8345-12f9323e1d13",
+                "aws:cloudformation:stack-name": "assist-api-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "u8jg26mx75",
+            "name": "earnix-acl",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-11T13:33:07-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/earnix-acl-apigw/be0aadc0-3864-11ee-a9d9-0a618d6f8927",
+                "aws:cloudformation:stack-name": "earnix-acl-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "uvb1iypz7b",
+            "name": "product-api",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-11T09:28:18-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/product-api-apigw/8b4e8540-3842-11ee-b19b-12e255fc4fcd",
+                "aws:cloudformation:stack-name": "product-api-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "v7u0r3xk22",
+            "name": "open-insurance",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-11T13:20:23-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/open-insurance-apigw/f6ffe520-3862-11ee-b650-0e416fc48045",
+                "aws:cloudformation:stack-name": "open-insurance-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "wha7st7bd2",
+            "name": "userInfo",
+            "description": "Pega as informações do usuário.",
+            "createdDate": "2022-02-09T11:38:22-03:00",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "wx1oegkw79",
+            "name": "develop-neurotech",
+            "createdDate": "2023-09-11T15:45:39-03:00",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "EDGE"
+                ]
+            },
+            "tags": {
+                "STAGE": "develop",
+                "aws:cloudformation:logical-id": "ApiGatewayRestApi",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/neurotech-develop/d94efb10-50c7-11ee-a19c-0e3ac1717a6b",
+                "aws:cloudformation:stack-name": "neurotech-develop"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "zloinm15l6",
+            "name": "bff-website",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-10T23:42:31-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "policy": "{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":\\\"*\\\",\\\"Action\\\":\\\"execute-api:Invoke\\\",\\\"Resource\\\":\\\"*\\\"}]}",
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/bff-website-apigw/b64d44e0-37f0-11ee-be50-0a38408af2b7",
+                "aws:cloudformation:stack-name": "bff-website-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        },
+        {
+            "id": "zocqfo5h83",
+            "name": "fleet-api",
+            "description": "Documentação dos endpoints",
+            "createdDate": "2023-08-11T11:02:53-03:00",
+            "version": "1.0",
+            "apiKeySource": "HEADER",
+            "endpointConfiguration": {
+                "types": [
+                    "REGIONAL"
+                ]
+            },
+            "tags": {
+                "aws:cloudformation:logical-id": "RestAPI",
+                "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:949977961455:stack/fleet-api-apigw/c1bfd310-384f-11ee-bbf9-0ea33b57918f",
+                "aws:cloudformation:stack-name": "fleet-api-apigw"
+            },
+            "disableExecuteApiEndpoint": false
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/search/{index}": {
+            "post": {
+                "operationId": "SearchController_post",
+                "parameters": [
+                    {
+                        "name": "index",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Rows found"
+                    },
+                    "400": {
+                        "description": "Error while find rows"
+                    }
+                },
+                "tags": [
+                    "Search"
+                ],
+                "security": [
+                    {
+                        "basic": []
+                    }
+                ],
+                "x-amazon-apigateway-integration": {
+                    "httpMethod": "POST",
+                    "uri": "https://search-api.dev.cloud.darwinseguros.com/search/{index}",
+                    "requestParameters": {
+                        "integration.request.path.index": "method.request.path.index"
+                    },
+                    "connectionId": "sqllqn",
+                    "passthroughBehavior": "when_no_match",
+                    "type": "http_proxy",
+                    "connectionType": "VPC_LINK"
+                },
+                "x-amazon-apigateway-auth": {
+                    "type": "NONE"
+                }
+            }
+        }
+    },
+    "info": {
+        "title": "SearchApi",
+        "description": "Documentação dos endpoints Search-api",
+        "version": "1.0",
+        "contact": {}
+    },
+    "tags": [],
+    "servers": [],
+    "components": {
+        "securitySchemes": {
+            "basic": {
+                "type": "http",
+                "scheme": "basic"
+            }
+        },
+        "schemas": {}
+    }
+}

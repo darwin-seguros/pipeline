@@ -30,3 +30,9 @@ steps:
       root: ~/terraform-search-api
       paths:
         - ./infra/terraform/swagger-spec.json
+        - swagger-spec.json
+  - run:
+      name: Run update api gateway
+      environment:
+        GENERATE_APIGW_FILE_IMAGE_NAME: << parameters.image_name >>
+      command: << include(scripts/update_apigw.sh) >>
