@@ -30,7 +30,7 @@ steps:
       root: ~/terraform-search-api
       paths:
         - ./infra/terraform/swagger-spec.json
-        - ./swagger-spec.json
+        - swagger-spec.json
   - run:
       name: Run update api gateway
       environment:

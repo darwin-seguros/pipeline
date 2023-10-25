@@ -8,5 +8,6 @@ then
       echo "API Gateway not exists"
 else
       pwd
+      ls
       aws apigateway put-rest-api --rest-api-id h5jamk8fw6 --mode merge --body 'fileb://swagger-spec.json'
 fi
