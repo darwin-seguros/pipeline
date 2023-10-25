@@ -7,5 +7,5 @@ if test -z "$API_ID"
 then
       echo "API Gateway not exists"
 else
-      aws apigateway put-rest-api --rest-api-id h5jamk8fw6 --mode merge --body 'fileb:///swagger-spec.json'
+      aws apigateway put-rest-api --rest-api-id h5jamk8fw6 --mode merge --body 'fileb://swagger-spec.json'
 fi
