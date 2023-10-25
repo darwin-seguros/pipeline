@@ -1,0 +1,19 @@
+description: |
+  This command deploy lambda.
+
+parameters:
+  path:
+    type: string
+    default: ""
+  dotenv:
+    type: string
+    default: dev
+
+steps:
+  - checkout
+  - run:
+      name: Deploy lambda << parameters.path >>
+      environment:
+        DEPLOY_LAMBDA_DOTENV: << parameters.dotenv >>
+        DEPLOY_LAMBDA_PATH: << parameters.path >>
+      command: << include(scripts/deploy_lambda.sh) >>

@@ -1,0 +1,32 @@
+description: |
+  This command generate apigw file.
+
+parameters:
+  image_name:
+    type: string
+    default: ""
+  dotenv:
+    type: string
+    default: dev
+
+steps:
+  - checkout
+  - node/install:
+      install-yarn: false
+      node-version: '18.16'
+  - node/install-packages:
+      pkg-manager: npm
+  - aws-cli/setup
+  - run:
+      name: Run generate swagger file
+      environment:
+        GENERATE_APIGW_FILE_DOTENV: << parameters.dotenv >>
+        GENERATE_APIGW_FILE_IMAGE_NAME: << parameters.image_name >>
+      command: << include(scripts/generate_apigw_file.sh) >>
+  - store_artifacts:
+      path: ./infra/terraform/swagger-spec.json
+      destination: swagger-spec-result.json
+  - persist_to_workspace:
+      root: ~/terraform-search-api
+      paths:
+        - ./infra/terraform/swagger-spec.json

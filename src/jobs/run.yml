@@ -18,6 +18,9 @@ parameters:
   dotenv:
     type: string
     default: dev
+  path:
+    type: string
+    default: ""
 
 
 steps:
@@ -31,4 +34,10 @@ steps:
       image_tag: << parameters.image_tag >>
       ecr_url: << parameters.ecr_url >>
       tag: << parameters.tag >>
+      dotenv: << parameters.dotenv >>
+  - generate_apigw_file:
+      image_name: << parameters.image_name >>
+      dotenv: << parameters.dotenv >>
+  - deploy_lambda:
+      path: << parameters.path >>
       dotenv: << parameters.dotenv >>
