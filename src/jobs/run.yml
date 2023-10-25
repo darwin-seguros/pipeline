@@ -12,10 +12,23 @@ parameters:
   ecr_url:
     type: string
     default: 958549588201.dkr.ecr.us-east-1.amazonaws.com
+  tag:
+    type: string
+    default: current
+  dotenv:
+    type: string
+    default: dev
+
 
 steps:
   - quality
   - build_application:
-      image_name: darwin-seguros/<< parameters.image_name >>
+      image_name: << parameters.image_name >>
       image_tag: << parameters.image_tag >>
       ecr_url: << parameters.ecr_url >>
+  - update_service:
+      image_name: << parameters.image_name >>
+      image_tag: << parameters.image_tag >>
+      ecr_url: << parameters.ecr_url >>
+      tag: << parameters.tag >>
+      dotenv: << parameters.dotenv >>

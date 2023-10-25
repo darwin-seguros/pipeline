@@ -1,0 +1,39 @@
+description: |
+  This command update manifest in k8s.
+
+parameters:
+  image_name:
+    type: string
+    default: ""
+  image_tag:
+    type: string
+    default: ${CIRCLE_SHA1}
+  ecr_url:
+    type: string
+    default: 958549588201.dkr.ecr.us-east-1.amazonaws.com
+  tag:
+    type: string
+    default: current
+  dotenv:
+    type: string
+    default: dev
+
+steps:
+  - checkout
+  - setup_remote_docker:
+      docker_layer_caching: false
+  - node/install:
+      install-yarn: false
+      node-version: '18.16'
+  - node/install-packages:
+      pkg-manager: npm
+  - run:
+      name: Generate configmap
+      environment:
+        UPDATE_SERVICE_DOTENV: << parameters.dotenv >>
+        GIT_MANIFEST_SECRET: ${GIT_MANIFEST_SECRET}
+        UPDATE_SERVICE_ECR_URL: << parameters.ecr_url >>
+        UPDATE_SERVICE_IMAGE_NAME: << parameters.image_name >>
+        UPDATE_SERVICE_IMAGE_TAG: << parameters.image_tag >>
+        UPDATE_SERVICE_TAG: << parameters.tag >>
+      command: << include(scripts/update_service.sh) >>
