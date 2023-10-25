@@ -4,7 +4,7 @@ description: >
   Orb for Darwin Seguros CI/CD pipelines with quality check, CI, CD and Terraform.
 
 display:
-  home_url: "https://github.com/darwin-seguros/pipeline"
+  home_url: "https://www.darwinseguros.com"
   source_url: "https://github.com/darwin-seguros/pipeline"
 
 orbs:
