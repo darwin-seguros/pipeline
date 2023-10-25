@@ -1,0 +1,7 @@
+description: >
+  A single, complete job to run.
+executor: default
+
+steps:
+  - quality:
+      quality_check: true

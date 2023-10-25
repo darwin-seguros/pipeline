@@ -1,15 +1,16 @@
 version: 2.1
 
 description: >
-  Sample orb description
-# What will your orb allow users to accomplish?
-# Descriptions should be short, simple, and informative.
+  Orb for Darwin Seguros CI/CD pipelines
 
-# This information will be displayed in the orb registry and is not mandatory.
 display:
-  home_url: "https://www.example.com/docs"
+  home_url: "https://github.com/darwin-seguros/pipeline"
   source_url: "https://github.com/darwin-seguros/pipeline"
 
-# If your orb requires other orbs, you can import them like this. Otherwise remove the "orbs" stanza.
-# orbs:
-#  hello: circleci/hello-build@0.0.5
+orbs:
+  path-filtering: circleci/path-filtering@1.0.0
+  continuation: circleci/continuation@1.0.0
+  aws-cli: circleci/aws-cli@4.0.0
+  node: circleci/node@5.1.0
+  npm-config: cobli/npm-config@1.0.0
+  terraform: circleci/terraform@3.2.1

@@ -1,0 +1,79 @@
+description: |
+    This command define configuration to pipeline.
+
+parameters:
+  pipeline-parameters-json-file:
+    type: string
+    default: /tmp/pipeline-parameters.json
+  configuration-path:
+    type: string
+    default: .circleci/continue.yml
+  lookup-key:
+    type: string
+    description: key to look up the filepath for the next config
+
+steps:
+  - run:
+      name: Set next config as << parameters.configuration-path >>
+      command: |
+        cp $(jq -r '.<< parameters.lookup-key >>' << parameters.pipeline-parameters-json-file >>) << parameters.configuration-path >>
+        cat << parameters.pipeline-parameters-json-file >>
+        echo "\n\n"
+        # debug: confirm next config
+        cat << parameters.configuration-path >>
+  - run:
+      name: Pop << parameters.lookup-key >> key from << parameters.pipeline-parameters-json-file >>
+      command: |
+        jq 'del(.<< parameters.lookup-key >>)' << parameters.pipeline-parameters-json-file >> > params.json
+        rm << parameters.pipeline-parameters-json-file >>
+        cp params.json << parameters.pipeline-parameters-json-file >>
+        
+        contexts_develop="aws-dev"
+        contexts_main="aws-prod"
+        contexts_release="aws-staging"
+        contexts_staging="aws-staging"
+        
+        environments_develop="development"
+        environments_main="production"
+        environments_release="staging"
+        environments_staging="staging"
+        
+        dotenv_develop="dev"
+        dotenv_main="prod"
+        dotenv_release="staging"
+        dotenv_staging="staging"
+        
+        tag_develop="current"
+        tag_main="stable"
+        tag_release="latest"
+        tag_staging="latest"
+        
+        branch=$(echo << pipeline.git.branch >> | cut -d'/' -f1)
+        echo "BRANCH = '$branch'"
+        
+        context="contexts_$branch"
+        echo "CONTEXT = ${!context}"
+        
+        environment="environments_$branch"
+        echo "ENVIRONMENT = ${!environment}"
+        
+        dotenv="dotenv_$branch"
+        echo "DOTENV = ${!dotenv}"
+        
+        tag="tag_$branch"
+        echo "TAG = ${!tag}"
+        
+        jq --arg a "${!environment}" '.environment = $a' << parameters.pipeline-parameters-json-file >> > "tmp" \
+          && mv "tmp" << parameters.pipeline-parameters-json-file >>
+        
+        jq --arg a "${!context}" '.context_name = $a' << parameters.pipeline-parameters-json-file >> > "tmp" \
+          && mv "tmp" << parameters.pipeline-parameters-json-file >>
+        
+        jq --arg a "${!tag}" '.tag = $a' << parameters.pipeline-parameters-json-file >> > "tmp" \
+          && mv "tmp" << parameters.pipeline-parameters-json-file >>
+        
+        jq --arg a "${!dotenv}" '.dotenv = $a' << parameters.pipeline-parameters-json-file >> > "tmp" \
+          && mv "tmp" << parameters.pipeline-parameters-json-file >>
+        
+        # debug: confirm contents
+        jq '.' << parameters.pipeline-parameters-json-file >>

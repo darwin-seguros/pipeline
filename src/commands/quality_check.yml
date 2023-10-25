@@ -1,0 +1,40 @@
+description: |
+  This command check quality of code.
+
+steps:
+  - checkout
+  - node/install:
+      install-yarn: false
+      node-version: '18.16'
+  - node/install-packages:
+      pkg-manager: npm
+  - run:
+      name: Run lint
+      command: |
+        echo "Running lint"
+        npm run lint > lint.json
+  - store_artifacts:
+      path: lint.json
+      destination: lint_result.json
+  - run:
+      name: Run audit
+      command: |
+        echo "Running audit"
+        npm audit > audit.json
+  - store_artifacts:
+      path: audit.json
+      destination: audit_result.json
+  - run:
+      name: Run tests
+      command: |
+        echo "Running tests"
+        npm run test:ci
+      environment:
+        JEST_JUNIT_OUTPUT_DIR: ./coverage/
+  - store_test_results:
+      path: ./coverage/
+
+  - persist_to_workspace:
+      root: .
+      paths:
+        - .
