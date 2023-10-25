@@ -1,7 +1,7 @@
 version: 2.1
 
 description: >
-  Orb for Darwin Seguros CI/CD pipelines
+  Orb for Darwin Seguros CI/CD pipelines with quality check, CI, CD and Terraform.
 
 display:
   home_url: "https://github.com/darwin-seguros/pipeline"
