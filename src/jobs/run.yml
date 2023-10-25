@@ -2,6 +2,12 @@ description: >
   A single, complete job to run.
 executor: default
 
+parameters:
+  quality-check:
+    description: This command check quality of code.
+    type: boolean
+    default: false
+
 steps:
   - quality:
-      quality_check: true
+      quality-check: true
