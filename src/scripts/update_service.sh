@@ -20,9 +20,9 @@ sed -i 's/version: .*$/version: '"$(date +%Y%m%d%H%M%S)"'/g' kubernete-manifest/
 echo "Updated deployment on repository"
 
 aws ecr get-login-password --region "${AWS_DEFAULT_REGION}" docker login --username AWS --password-stdin "${UPDATE_SERVICE_ECR_URL}"
-docker pull ${UPDATE_SERVICE_ECR_URL}:${UPDATE_SERVICE_IMAGE_TAG}
-docker tag ${UPDATE_SERVICE_ECR_URL}:${UPDATE_SERVICE_IMAGE_TAG} ${UPDATE_SERVICE_ECR_URL}:${UPDATE_SERVICE_TAG}
-docker push ${UPDATE_SERVICE_ECR_URL}:${UPDATE_SERVICE_TAG}
+docker pull "${UPDATE_SERVICE_ECR_URL}:${UPDATE_SERVICE_IMAGE_TAG}"
+docker tag "${UPDATE_SERVICE_ECR_URL}:${UPDATE_SERVICE_IMAGE_TAG}" "${UPDATE_SERVICE_ECR_URL}:${UPDATE_SERVICE_TAG}"
+docker push "${UPDATE_SERVICE_ECR_URL}:${UPDATE_SERVICE_TAG}"
 
 cd kubernete-manifest
 git pull
