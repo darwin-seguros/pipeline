@@ -3,7 +3,7 @@ DEPLOY_LAMBDA_PATH="$(echo "${DEPLOY_LAMBDA_PATH}" | circleci env subst)"
 DEPLOY_LAMBDA_DOTENV="$(echo "${DEPLOY_LAMBDA_DOTENV}" | circleci env subst)"
 
 echo "Installing chalice"
-cd "${DEPLOY_LAMBDA_PATH}" || return
+cd "${DEPLOY_LAMBDA_PATH}" || exit
 python3 --version
 sudo apt-get update
 sudo apt-get install python3-virtualenv
