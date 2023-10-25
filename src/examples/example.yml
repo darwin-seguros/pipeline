@@ -10,5 +10,5 @@ usage:
         - pipeline/quality
         - pipeline/build_application:
             image_name: "my-image"
-            imane_tag: "my-tag"
+            image_tag: "my-tag"
             ecr_url: "my-ecr_url"
