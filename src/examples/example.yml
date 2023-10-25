@@ -7,5 +7,5 @@ usage:
   workflows:
     use-my-orb:
       jobs:
-        - pipeline/quality
-          quality_check: true
+        - pipeline/quality:
+            quality_check: true
