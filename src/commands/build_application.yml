@@ -29,9 +29,10 @@ steps:
       auth-token: ${NPM_TOKEN}
   - run:
       name: Build Docker image
-      command: |
-        echo "Building docker image with identification\n: << pipeline.parameters.image_name >>:<< pipeline.parameters.imane_tag >>"
-        docker build -t << pipeline.parameters.image_name >>:<< pipeline.parameters.imane_tag >> .
+      environment:
+        BUILD_IMAGE_IMAGE_NAME: << pipeline.parameters.image_name >>
+        BUILD_IMAGE_IMAGE_TAG: << pipeline.parameters.image_tag >>
+      command: << include(script/build_image.sh) >>
   - aws-cli/setup
   - run:
       name: Upload image to ECR
@@ -39,4 +40,4 @@ steps:
         BUILD_IMAGE_ECR_URL: << pipeline.parameters.ecr_url >>
         BUILD_IMAGE_IMAGE_NAME: << pipeline.parameters.image_name >>
         BUILD_IMAGE_IMAGE_TAG: << pipeline.parameters.image_tag >>
-      command: << include(script/build_image.sh) >>
+      command: << include(script/upload_image.sh) >>
