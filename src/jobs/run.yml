@@ -16,6 +16,6 @@ parameters:
 steps:
   - quality
   - build_application:
-      image_name: darwin-seguros/<< pipeline.parameters.image_name >>
-      image_tag: << pipeline.parameters.image_tag >>
-      ecr_url: << pipeline.parameters.ecr_url >>
+      image_name: darwin-seguros/<< parameters.image_name >>
+      image_tag: << parameters.image_tag >>
+      ecr_url: << parameters.ecr_url >>
