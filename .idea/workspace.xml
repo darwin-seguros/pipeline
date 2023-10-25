@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9c5b2cc4-b999-46c7-9531-a0b847a4b9dc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/config.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/quality_check.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/quality-check.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jobs/run.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/jobs/run.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +188,7 @@
       <workItem from="1698241021900" duration="19000" />
       <workItem from="1698241812962" duration="20000" />
       <workItem from="1698241870429" duration="12000" />
-      <workItem from="1698242043731" duration="1554000" />
+      <workItem from="1698242043731" duration="1766000" />
     </task>
     <servers />
   </component>

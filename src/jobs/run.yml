@@ -10,4 +10,4 @@ parameters:
 
 steps:
   - quality:
-      quality-check: true
+      quality-check: << parameters.quality-check >>
