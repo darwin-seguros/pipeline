@@ -3,7 +3,7 @@ description: >
 executor: default
 
 parameters:
-  imane_name:
+  image_name:
     type: string
     default: ""
   imane_tag:
@@ -16,6 +16,6 @@ parameters:
 steps:
   - quality
   - build_application:
-      imane_name: darwin-seguros/<< pipeline.parameters.imane_name >>
+      image_name: darwin-seguros/<< pipeline.parameters.image_name >>
       imane_tag: << pipeline.parameters.imane_tag >>
       ecr_url: << pipeline.parameters.ecr_url >>

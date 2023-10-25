@@ -2,7 +2,7 @@ description: |
   This command build application.
 
 parameters:
-  imane_name:
+  image_name:
     type: string
     default: ""
   imane_tag:
@@ -11,7 +11,6 @@ parameters:
   ecr_url:
     type: string
     default: 958549588201.dkr.ecr.us-east-1.amazonaws.com
-
 
 steps:
   - checkout
@@ -31,13 +30,13 @@ steps:
   - run:
       name: Build Docker image
       command: |
-        echo "Building docker image with identification\n: << pipeline.parameters.imane_name >>:<< pipeline.parameters.imane_tag >>"
-        docker build -t << pipeline.parameters.imane_name >>:<< pipeline.parameters.imane_tag >> .
+        echo "Building docker image with identification\n: << pipeline.parameters.image_name >>:<< pipeline.parameters.imane_tag >>"
+        docker build -t << pipeline.parameters.image_name >>:<< pipeline.parameters.imane_tag >> .
   - aws-cli/setup
   - run:
       name: Upload image to ECR
-      command: |
-        aws ecr get-login-password --region "${AWS_DEFAULT_REGION}" | \
-          docker login --username AWS --password-stdin "<< pipeline.parameters.ecr_url >>/<< pipeline.parameters.imane_name >>"
-        docker tag << pipeline.parameters.imane_name >>:<< pipeline.parameters.imane_tag >> << pipeline.parameters.ecr_url >>/<< pipeline.parameters.imane_name >>:<< pipeline.parameters.imane_tag >> \
-          && docker push << pipeline.parameters.ecr_url >>/<< pipeline.parameters.imane_name >>:<< pipeline.parameters.imane_tag >>
+      environment:
+        BUILD_IMAGE_ECR_URL: << pipeline.parameters.ecr_url >>
+        BUILD_IMAGE_IMAGE_NAME: << pipeline.parameters.image_name >>
+        BUILD_IMAGE_IMAGE_TAG: << pipeline.parameters.image_tag >>
+      command: << include(script/build_image.sh) >>
