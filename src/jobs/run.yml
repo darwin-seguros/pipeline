@@ -3,11 +3,11 @@ description: >
 executor: default
 
 parameters:
-  quality-check:
+  quality_check:
     description: This command check quality of code.
     type: boolean
     default: false
 
 steps:
   - quality:
-      quality-check: << parameters.quality-check >>
+      quality-check: << parameters.quality_check >>
