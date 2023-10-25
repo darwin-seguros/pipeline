@@ -1,12 +1,6 @@
 description: |
   This command check quality of code.
 
-parameters:
-  quality_check:
-    description: This command check quality of code.
-    type: boolean
-    default: false
-
 steps:
   - checkout
   - node/install:

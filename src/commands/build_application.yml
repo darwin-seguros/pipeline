@@ -1,0 +1,43 @@
+description: |
+  This command build application.
+
+parameters:
+  image-name:
+    type: string
+    default: ""
+  image-tag:
+    type: string
+    default: ${CIRCLE_SHA1}
+  ecr-url:
+    type: string
+    default: 958549588201.dkr.ecr.us-east-1.amazonaws.com
+
+
+steps:
+  - checkout
+  - run:
+      name: Define application version
+      command: |
+        echo "Define application version"
+  - setup_remote_docker:
+      docker_layer_caching: false
+  - node/install:
+      install-yarn: false
+      node-version: '18.16'
+  - npm-config/set-registry:
+      registry-prurl: //npm.pkg.github.com
+      scope: '@darwin-seguros'
+      auth-token: ${NPM_TOKEN}
+  - run:
+      name: Build Docker image
+      command: |
+        echo "Building docker image with identification\n: << pipeline.parameters.image-name >>:<< pipeline.parameters.image-tag >>"
+        docker build -t << pipeline.parameters.image-name >>:<< pipeline.parameters.image-tag >> .
+  - aws-cli/setup
+  - run:
+      name: Upload image to ECR
+      command: |
+        aws ecr get-login-password --region "${AWS_DEFAULT_REGION}" | \
+          docker login --username AWS --password-stdin "<< pipeline.parameters.ecr-url >>/<< pipeline.parameters.image-name >>"
+        docker tag << pipeline.parameters.image-name >>:<< pipeline.parameters.image-tag >> << pipeline.parameters.ecr-url >>/<< pipeline.parameters.image-name >>:<< pipeline.parameters.image-tag >> \
+          && docker push << pipeline.parameters.ecr-url >>/<< pipeline.parameters.image-name >>:<< pipeline.parameters.image-tag >>

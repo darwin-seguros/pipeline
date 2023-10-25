@@ -7,7 +7,19 @@ parameters:
     description: This command check quality of code.
     type: boolean
     default: false
+  image-name:
+    type: string
+    default: ""
+  image-tag:
+    type: string
+    default: ${CIRCLE_SHA1}
+  ecr-url:
+    type: string
+    default: 958549588201.dkr.ecr.us-east-1.amazonaws.com
 
 steps:
-  - quality:
-      quality_check: << parameters.quality_check >>
+  - quality
+  - build_application:
+      image-name: darwin-seguros/<< pipeline.parameters.image-name >>
+      image-tag: << pipeline.parameters.image-tag >>
+      ecr-url: << pipeline.parameters.ecr-url >>

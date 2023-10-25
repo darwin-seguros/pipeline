@@ -7,5 +7,8 @@ usage:
   workflows:
     use-my-orb:
       jobs:
-        - pipeline/quality:
-            quality_check: true
+        - pipeline/quality
+        - pipeline/build_application:
+            image-name: "my-image"
+            image-tag: "my-tag"
+            ecr-url: "my-ecr-url"
