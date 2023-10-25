@@ -10,10 +10,10 @@ node ./k8s_helpers/create_config_map.js "./.env.${UPDATE_SERVICE_DOTENV}" > conf
 
 git config --global user.email "devops@darwinseguros.com"
 git config --global user.name "DevOps"
-git clone https://${GIT_MANIFEST_SECRET}@dev.azure.com/darwin-seguros/AWS/_git/kubernete-manifest
+git clone "https://${GIT_MANIFEST_SECRET}@dev.azure.com/darwin-seguros/AWS/_git/kubernete-manifest"
 echo "Clone k8s manifest repo"
 
-cp -rf configmap.yml kubernete-manifest/${UPDATE_SERVICE_IMAGE_NAME}/${UPDATE_SERVICE_DOTENV}/configmap.yml
+cp -rf configmap.yml "kubernete-manifest/${UPDATE_SERVICE_IMAGE_NAME}/${UPDATE_SERVICE_DOTENV}/configmap.yml"
 echo "Update configmap on repository"
 
 sed -i 's/version: .*$/version: '"$(date +%Y%m%d%H%M%S)"'/g' "kubernete-manifest/${UPDATE_SERVICE_IMAGE_NAME}/${UPDATE_SERVICE_DOTENV}/deployment.yml"
