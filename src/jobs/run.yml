@@ -3,23 +3,19 @@ description: >
 executor: default
 
 parameters:
-  quality_check:
-    description: This command check quality of code.
-    type: boolean
-    default: false
-  image-name:
+  imane_name:
     type: string
     default: ""
-  image-tag:
+  imane_tag:
     type: string
     default: ${CIRCLE_SHA1}
-  ecr-url:
+  ecr_url:
     type: string
     default: 958549588201.dkr.ecr.us-east-1.amazonaws.com
 
 steps:
   - quality
   - build_application:
-      image-name: darwin-seguros/<< pipeline.parameters.image-name >>
-      image-tag: << pipeline.parameters.image-tag >>
-      ecr-url: << pipeline.parameters.ecr-url >>
+      imane_name: darwin-seguros/<< pipeline.parameters.imane_name >>
+      imane_tag: << pipeline.parameters.imane_tag >>
+      ecr_url: << pipeline.parameters.ecr_url >>

@@ -9,6 +9,6 @@ usage:
       jobs:
         - pipeline/quality
         - pipeline/build_application:
-            image-name: "my-image"
-            image-tag: "my-tag"
-            ecr-url: "my-ecr-url"
+            imane_name: "my-image"
+            imane_tag: "my-tag"
+            ecr_url: "my-ecr_url"
