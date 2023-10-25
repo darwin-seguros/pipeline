@@ -1,5 +1,5 @@
 description: >
-  Sample example description.
+  Sample of execution the quality check in pipeline.
 usage:
   version: 2.1
   orbs:
