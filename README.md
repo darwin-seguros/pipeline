@@ -10,7 +10,6 @@ Pipeline's CircleCI Orb.
 This repository is a ORB to CI and CD for Darwin Seguros.
 
 ---
-
 ## Resources
 
 ### How to Contribute
