@@ -30,14 +30,14 @@ steps:
   - run:
       name: Build Docker image
       environment:
-        BUILD_IMAGE_IMAGE_NAME: << pipeline.parameters.image_name >>
-        BUILD_IMAGE_IMAGE_TAG: << pipeline.parameters.image_tag >>
+        BUILD_IMAGE_IMAGE_NAME: << parameters.image_name >>
+        BUILD_IMAGE_IMAGE_TAG: << parameters.image_tag >>
       command: << include(scripts/build_image.sh) >>
   - aws-cli/setup
   - run:
       name: Upload image to ECR
       environment:
-        BUILD_IMAGE_ECR_URL: << pipeline.parameters.ecr_url >>
-        BUILD_IMAGE_IMAGE_NAME: << pipeline.parameters.image_name >>
-        BUILD_IMAGE_IMAGE_TAG: << pipeline.parameters.image_tag >>
+        BUILD_IMAGE_ECR_URL: << parameters.ecr_url >>
+        BUILD_IMAGE_IMAGE_NAME: << parameters.image_name >>
+        BUILD_IMAGE_IMAGE_TAG: << parameters.image_tag >>
       command: << include(scripts/upload_image.sh) >>
