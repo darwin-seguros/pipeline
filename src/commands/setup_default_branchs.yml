@@ -1,0 +1,16 @@
+description: |
+  This command setup default branch.
+
+parameters:
+  oidc_token:
+    type: string
+    default: ""
+
+steps:
+      - checkout
+      - run:
+          name: Setting defaults branchs
+          environment:
+            SETUP_DEFAULT_BRANCHS_OIDC_TOKEN: << parameters.oidc_token >>
+          command: << include(scripts/setup_default_branchs.sh) >>
+            

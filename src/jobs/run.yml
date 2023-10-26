@@ -33,6 +33,9 @@ parameters:
   branch:
     type: string
     default: ""
+  oidc_token:
+    type: string
+    default: ""
 
 steps:
   - quality
@@ -57,3 +60,5 @@ steps:
       configuration_path: << parameters.configuration_path >>
       lookup_key: << parameters.lookup_key >>
       branch: << parameters.branch >>
+  - setup_default_branchs:
+      oidc_token: << parameters.oidc_token >>
