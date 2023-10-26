@@ -15,7 +15,7 @@ cp params.json "${SETUP_JSON_FILE}"
 
 BRANCH=$(echo "${SETUP_GIT_BRANCH}" | cut -d"/" -f1)
 
-if [ $BRANCH = "develop" ];
+if [ "${BRANCH}" = "develop" ];
 then
       CONTEXT="aws-dev"
       ENVIRONMENT="development"
@@ -23,7 +23,7 @@ then
       TAG="current"
 fi
 
-if [ $BRANCH = "main" ];
+if [ "${BRANCH}" = "main" ];
 then
       CONTEXT="aws-prod"
       ENVIRONMENT="production"
@@ -31,7 +31,7 @@ then
       TAG="stable"
 fi
 
-if [ $BRANCH = "release" -o $BRANCH = "staging" ];
+if [ "${BRANCH}" = "release" -o "${BRANCH}" = "staging" ];
 then
       CONTEXT="aws-staging"
       ENVIRONMENT="staging"
