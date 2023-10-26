@@ -4,7 +4,7 @@ SETUP_JSON_FILE="$(echo "${SETUP_JSON_FILE}" | circleci env subst)"
 SETUP_LOOKUP_KEY="$(echo "${SETUP_LOOKUP_KEY}" | circleci env subst)"
 SETUP_GIT_BRANCH="$(echo "${SETUP_GIT_BRANCH}" | circleci env subst)"
 
-cp $(jq -r ".${SETUP_LOOKUP_KEY}" "${SETUP_JSON_FILE}") "${SETUP_CONFIGURATION_PATH}"
+cp "$(jq -r '.${SETUP_LOOKUP_KEY}' ${SETUP_JSON_FILE})" "${SETUP_CONFIGURATION_PATH}"
 cat "${SETUP_JSON_FILE}"
 
 cat "${SETUP_CONFIGURATION_PATH}"
@@ -13,51 +13,52 @@ jq "del(.${SETUP_LOOKUP_KEY})" "${SETUP_JSON_FILE}" > params.json
 rm "${SETUP_JSON_FILE}"
 cp params.json "${SETUP_JSON_FILE}"
 
-contexts_develop="aws-dev"
-contexts_main="aws-prod"
-contexts_release="aws-staging"
-contexts_staging="aws-staging"
+BRANCH="$(echo ${SETUP_GIT_BRANCH} | cut -d'/' -f1)"
 
-environments_develop="development"
-environments_main="production"
-environments_release="staging"
-environments_staging="staging"
+if [ $BRANCH = "develop" ];
+then
+      CONTEXT="aws-dev"
+      ENVIRONMENT="development"
+      DOTENV="dev"
+      TAG="current"
+fi
 
-dotenv_develop="dev"
-dotenv_main="prod"
-dotenv_release="staging"
-dotenv_staging="staging"
+if [ $BRANCH = "main" ];
+then
+      CONTEXT="aws-prod"
+      ENVIRONMENT="production"
+      DOTENV="prod"
+      TAG="stable"
+fi
 
-tag_develop="current"
-tag_main="stable"
-tag_release="latest"
-tag_staging="latest"
+if [ $BRANCH = "release" -o $BRANCH = "staging" ];
+then
+      CONTEXT="aws-staging"
+      ENVIRONMENT="staging"
+      DOTENV="staging"
+      TAG="latest"
+fi
 
-branch="$(echo ${SETUP_GIT_BRANCH} | cut -d'/' -f1)"
-echo "BRANCH = "$branch""
+echo "BRANCH = ${BRANCH}"
 
-context="contexts_$branch"
-echo "CONTEXT = ${!context}"
+echo "CONTEXT = ${CONTEXT}"
 
-environment="environments_$branch"
-echo "ENVIRONMENT = ${!environment}"
+echo "ENVIRONMENT = ${ENVIRONMENT}"
 
-dotenv="dotenv_$branch"
-echo "DOTENV = ${!dotenv}"
+echo "DOTENV = ${DOTENV}"
 
-tag="tag_$branch"
-echo "TAG = ${!tag}"
+echo "TAG = ${TAG}"
 
-jq --arg a "${!environment}" ".environment = $a" "${SETUP_JSON_FILE}" > "tmp"
+jq --arg a "${ENVIRONMENT}" ".environment = $a" "${SETUP_JSON_FILE}" > "tmp"
 mv "tmp" "${SETUP_JSON_FILE}"
 
-jq --arg a "${!context}" ".context_name = $a" "${SETUP_JSON_FILE}" > "tmp"
+jq --arg a "${CONTEXT}" ".context_name = $a" "${SETUP_JSON_FILE}" > "tmp"
 mv "tmp" "${SETUP_JSON_FILE}"
 
-jq --arg a "${!tag}" ".tag = $a" "${SETUP_JSON_FILE}" > "tmp"
+jq --arg a "${TAG}" ".tag = $a" "${SETUP_JSON_FILE}" > "tmp"
 mv "tmp" "${SETUP_JSON_FILE}"
 
-jq --arg a "${!dotenv}" ".dotenv = $a" "${SETUP_JSON_FILE}" > "tmp"
+jq --arg a "${DOTENV}" ".dotenv = $a" "${SETUP_JSON_FILE}" > "tmp"
 mv "tmp" "${SETUP_JSON_FILE}"
 
 jq "." "${SETUP_JSON_FILE}"
