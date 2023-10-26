@@ -1,0 +1,8 @@
+{
+  "config": ".circleci/application.yml",
+  "context_name": "__CONTEXT_NAME__",
+  "environment": "development",
+  "tag": "__TAG__",
+  "dotenv": "__DOTENV__",
+  "run-lambdas": "true"
+}
