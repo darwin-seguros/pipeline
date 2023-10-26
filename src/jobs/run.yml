@@ -36,6 +36,9 @@ parameters:
   oidc_token:
     type: string
     default: ""
+  project:
+    type: string
+    default: ""
 
 steps:
   - quality
@@ -62,3 +65,4 @@ steps:
       branch: << parameters.branch >>
   - setup_default_branchs:
       oidc_token: << parameters.oidc_token >>
+      project: << parameters.project >>
