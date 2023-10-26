@@ -22,5 +22,5 @@ steps:
         SETUP_CONFIGURATION_PATH: << parameters.configuration_path >>
         SETUP_JSON_FILE: << parameters.pipeline_parameters_json_file >>
         SETUP_LOOKUP_KEY: << parameters.lookup_key >>
-        SETUP_GIT_BRANCH: << pipeline.branch >>
+        SETUP_GIT_BRANCH: << parameters.branch >>
       command: << include(scripts/setup.sh) >>

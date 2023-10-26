@@ -56,4 +56,4 @@ steps:
       pipeline_parameters_json_file: << parameters.pipeline_parameters_json_file >>
       configuration_path: << parameters.configuration_path >>
       lookup_key: << parameters.lookup_key >>
-      branch: << pipeline.branch >>
+      branch: << parameters.branch >>
