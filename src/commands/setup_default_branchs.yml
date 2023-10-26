@@ -15,5 +15,5 @@ steps:
       name: Setting defaults branchs
       environment:
         SETUP_DEFAULT_BRANCHS_OIDC_TOKEN: << parameters.oidc_token >>
-        SETUP_PROJECT: << pipeline.project >>
+        SETUP_PROJECT: << parameters.project >>
       command: << include(scripts/setup_default_branchs.sh) >>
