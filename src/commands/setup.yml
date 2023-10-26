@@ -11,6 +11,7 @@ parameters:
   lookup_key:
     type: string
     description: key to look up the filepath for the next config
+    default: config
   branch:
     type: string
     default: ""
