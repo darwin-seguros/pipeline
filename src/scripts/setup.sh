@@ -13,7 +13,7 @@ jq "del(.${SETUP_LOOKUP_KEY})" "${SETUP_JSON_FILE}" > params.json
 rm "${SETUP_JSON_FILE}"
 cp params.json "${SETUP_JSON_FILE}"
 
-BRANCH="$(echo '${SETUP_GIT_BRANCH}' | cut -d'/' -f1)"
+BRANCH=$(echo "${SETUP_GIT_BRANCH}" | cut -d"/" -f1)
 
 if [ $BRANCH = "develop" ];
 then
