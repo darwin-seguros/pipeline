@@ -21,15 +21,18 @@ parameters:
   path:
     type: string
     default: ""
-  pipeline-parameters-json-file:
+  pipeline_parameters_json_file:
     type: string
     default: /tmp/pipeline-parameters.json
-  configuration-path:
+  configuration_path:
     type: string
     default: .circleci/continue.yml
-  lookup-key:
+  lookup_key:
     type: string
     description: key to look up the filepath for the next config
+  branch:
+    type: string
+    default: ""
 
 steps:
   - quality
@@ -50,6 +53,7 @@ steps:
       path: << parameters.path >>
       dotenv: << parameters.dotenv >>
   - setup:
-      pipeline-parameters-json-file: << parameters.pipeline-parameters-json-file >>
-      configuration-path: << parameters.configuration-path >>
-      lookup-key: << parameters.lookup-key >>
+      pipeline_parameters_json_file: << parameters.pipeline_parameters_json_file >>
+      configuration_path: << parameters.configuration_path >>
+      lookup_key: << parameters.lookup_key >>
+      branch: << pipeline.branch >>
