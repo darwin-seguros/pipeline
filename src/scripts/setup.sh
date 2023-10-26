@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 SETUP_CONFIGURATION_PATH="$(echo "${SETUP_CONFIGURATION_PATH}" | circleci env subst)"
 SETUP_JSON_FILE="$(echo "${SETUP_JSON_FILE}" | circleci env subst)"
 SETUP_LOOKUP_KEY="$(echo "${SETUP_LOOKUP_KEY}" | circleci env subst)"
