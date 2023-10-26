@@ -4,7 +4,7 @@ SETUP_JSON_FILE="$(echo "${SETUP_JSON_FILE}" | circleci env subst)"
 SETUP_LOOKUP_KEY="$(echo "${SETUP_LOOKUP_KEY}" | circleci env subst)"
 SETUP_GIT_BRANCH="$(echo "${SETUP_GIT_BRANCH}" | circleci env subst)"
 
-cp "$(jq -r '.${SETUP_LOOKUP_KEY}' ${SETUP_JSON_FILE})" "${SETUP_CONFIGURATION_PATH}"
+cp "$(jq -r '.${SETUP_LOOKUP_KEY}' '${SETUP_JSON_FILE}')" "${SETUP_CONFIGURATION_PATH}"
 cat "${SETUP_JSON_FILE}"
 
 cat "${SETUP_CONFIGURATION_PATH}"
@@ -13,7 +13,7 @@ jq "del(.${SETUP_LOOKUP_KEY})" "${SETUP_JSON_FILE}" > params.json
 rm "${SETUP_JSON_FILE}"
 cp params.json "${SETUP_JSON_FILE}"
 
-BRANCH="$(echo ${SETUP_GIT_BRANCH} | cut -d'/' -f1)"
+BRANCH="$(echo '${SETUP_GIT_BRANCH}' | cut -d'/' -f1)"
 
 if [ $BRANCH = "develop" ];
 then
