@@ -51,19 +51,19 @@ echo "DOTENV = ${DOTENV}"
 echo "TAG = ${TAG}"
 
 # shellcheck disable=SC2005,SC2154
-jq ".environment = '${ENVIRONMENT}'" "${SETUP_JSON_FILE}" > "tmp"
+jq ".environment = ${ENVIRONMENT}" "${SETUP_JSON_FILE}" > "tmp"
 mv "tmp" "${SETUP_JSON_FILE}"
 
 # shellcheck disable=SC2005,SC2154
-jq ".context_name = '${CONTEXT}'" "${SETUP_JSON_FILE}" > "tmp"
+jq ".context_name = ${CONTEXT}" "${SETUP_JSON_FILE}" > "tmp"
 mv "tmp" "${SETUP_JSON_FILE}"
 
 # shellcheck disable=SC2005,SC2154
-jq ".tag = '${TAG}'" "${SETUP_JSON_FILE}" > "tmp"
+jq ".tag = ${TAG}" "${SETUP_JSON_FILE}" > "tmp"
 mv "tmp" "${SETUP_JSON_FILE}"
 
 # shellcheck disable=SC2005,SC2154
-jq ".dotenv = '${DOTENV}'" "${SETUP_JSON_FILE}" > "tmp"
+jq ".dotenv = ${DOTENV}" "${SETUP_JSON_FILE}" > "tmp"
 mv "tmp" "${SETUP_JSON_FILE}"
 
 jq "." "${SETUP_JSON_FILE}"
