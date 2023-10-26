@@ -50,16 +50,16 @@ echo "ENVIRONMENT = ${ENVIRONMENT}"
 echo "DOTENV = ${DOTENV}"
 echo "TAG = ${TAG}"
 
-jq --arg a ${!ENVIRONMENT} ".environment = ${a}" "${SETUP_JSON_FILE}" > "tmp"
+echo $(jq --arg a ${!ENVIRONMENT} ".environment = $a" "${SETUP_JSON_FILE}" > "tmp")
 mv "tmp" "${SETUP_JSON_FILE}"
 
-jq --arg a ${!CONTEXT} ".context_name = ${a}" "${SETUP_JSON_FILE}" > "tmp"
+echo $(jq --arg a ${!CONTEXT} ".context_name = $a" "${SETUP_JSON_FILE}" > "tmp")
 mv "tmp" "${SETUP_JSON_FILE}"
 
-jq --arg a ${!TAG} ".tag = ${a}" "${SETUP_JSON_FILE}" > "tmp"
+echo $(jq --arg a ${!TAG} ".tag = $a" "${SETUP_JSON_FILE}" > "tmp")
 mv "tmp" "${SETUP_JSON_FILE}"
 
-jq --arg a ${!DOTENV} ".dotenv = ${a}" "${SETUP_JSON_FILE}" > "tmp"
+echo $(jq --arg a ${!DOTENV} ".dotenv = $a" "${SETUP_JSON_FILE}" > "tmp")
 mv "tmp" "${SETUP_JSON_FILE}"
 
 jq "." "${SETUP_JSON_FILE}"
