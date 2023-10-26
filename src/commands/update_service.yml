@@ -20,6 +20,7 @@ parameters:
 
 steps:
   - checkout
+  - aws-cli/setup
   - setup_remote_docker:
       docker_layer_caching: false
   - node/install:
