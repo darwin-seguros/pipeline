@@ -21,7 +21,15 @@ parameters:
   path:
     type: string
     default: ""
-
+  pipeline-parameters-json-file:
+    type: string
+    default: /tmp/pipeline-parameters.json
+  configuration-path:
+    type: string
+    default: .circleci/continue.yml
+  lookup-key:
+    type: string
+    description: key to look up the filepath for the next config
 
 steps:
   - quality
@@ -41,3 +49,7 @@ steps:
   - deploy_lambda:
       path: << parameters.path >>
       dotenv: << parameters.dotenv >>
+  - setup:
+      pipeline-parameters-json-file: << parameters.pipeline-parameters-json-file >>
+      configuration-path: << parameters.configuration-path >>
+      lookup-key: << parameters.lookup-key >>

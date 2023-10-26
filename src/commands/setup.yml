@@ -1,0 +1,22 @@
+description: |
+  This command setup project.
+
+parameters:
+  pipeline-parameters-json-file:
+    type: string
+    default: /tmp/pipeline-parameters.json
+  configuration-path:
+    type: string
+    default: .circleci/continue.yml
+  lookup-key:
+    type: string
+    description: key to look up the filepath for the next config
+
+steps:
+  - run:
+      name: Set next config as << parameters.configuration-path >>
+      environment:
+        SETUP_CONFIGURATION_PATH: << parameters.configuration-path >>
+        SETUP_JSON_FILE: << parameters.pipeline-parameters-json-file >>
+        SETUP_LOOKUP_KEY: << parameters.lookup-key >>
+      command: << include(scripts/setup.sh) >>
