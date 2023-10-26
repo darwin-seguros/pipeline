@@ -6,6 +6,8 @@ UPDATE_SERVICE_IMAGE_NAME="$(echo "${UPDATE_SERVICE_IMAGE_NAME}" | circleci env 
 UPDATE_SERVICE_IMAGE_TAG="$(echo "${UPDATE_SERVICE_IMAGE_TAG}" | circleci env subst)"
 UPDATE_SERVICE_TAG="$(echo "${UPDATE_SERVICE_TAG}" | circleci env subst)"
 
+echo "MANIFEST = ${GIT_MANIFEST_SECRET}"
+
 node ./k8s_helpers/create_config_map.js "./.env.${UPDATE_SERVICE_DOTENV}" > configmap.yml
 
 git config --global user.email "devops@darwinseguros.com"
