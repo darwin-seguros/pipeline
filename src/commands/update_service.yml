@@ -17,9 +17,6 @@ parameters:
   dotenv:
     type: string
     default: dev
-  git_secret:
-    type: string
-    default: dev
 
 steps:
   - checkout
@@ -34,7 +31,6 @@ steps:
       name: Generate configmap
       environment:
         UPDATE_SERVICE_DOTENV: << parameters.dotenv >>
-        GIT_MANIFEST_SECRET: << parameters.git_secret >>
         UPDATE_SERVICE_ECR_URL: << parameters.ecr_url >>
         UPDATE_SERVICE_IMAGE_NAME: << parameters.image_name >>
         UPDATE_SERVICE_IMAGE_TAG: << parameters.image_tag >>

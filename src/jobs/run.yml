@@ -18,9 +18,6 @@ parameters:
   dotenv:
     type: string
     default: dev
-  git_secret:
-    type: string
-    default: dev
   path:
     type: string
     default: ""
@@ -55,7 +52,6 @@ steps:
       ecr_url: << parameters.ecr_url >>
       tag: << parameters.tag >>
       dotenv: << parameters.dotenv >>
-      git_secret: << parameters.git_secret >>
   - generate_apigw_file:
       image_name: << parameters.image_name >>
       dotenv: << parameters.dotenv >>

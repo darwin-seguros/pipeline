@@ -1,6 +1,5 @@
 #!/bin/sh
 UPDATE_SERVICE_DOTENV="$(echo "${UPDATE_SERVICE_DOTENV}" | circleci env subst)"
-GIT_MANIFEST_SECRET="$(echo "${GIT_MANIFEST_SECRET}" | circleci env subst)"
 UPDATE_SERVICE_ECR_URL="$(echo "${UPDATE_SERVICE_ECR_URL}" | circleci env subst)"
 UPDATE_SERVICE_IMAGE_NAME="$(echo "${UPDATE_SERVICE_IMAGE_NAME}" | circleci env subst)"
 UPDATE_SERVICE_IMAGE_TAG="$(echo "${UPDATE_SERVICE_IMAGE_TAG}" | circleci env subst)"
