@@ -31,7 +31,7 @@ then
       TAG="stable"
 fi
 
-if [ "${BRANCH}" = "release" || "${BRANCH}" = "staging" ];
+if [ "${BRANCH}" = "release" ] || [ "${BRANCH}" = "staging" ];
 then
       CONTEXT="aws-staging"
       ENVIRONMENT="staging"
