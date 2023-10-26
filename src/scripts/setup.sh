@@ -31,7 +31,7 @@ then
       TAG="stable"
 fi
 
-if [ "${BRANCH}" = "release" -o "${BRANCH}" = "staging" ];
+if [ "${BRANCH}" = "release" || "${BRANCH}" = "staging" ];
 then
       CONTEXT="aws-staging"
       ENVIRONMENT="staging"
@@ -49,16 +49,16 @@ echo "DOTENV = ${DOTENV}"
 
 echo "TAG = ${TAG}"
 
-jq --arg a "${ENVIRONMENT}" ".environment = $a" "${SETUP_JSON_FILE}" > "tmp"
+jq --arg a "${ENVIRONMENT}" ".environment = ${a}" "${SETUP_JSON_FILE}" > "tmp"
 mv "tmp" "${SETUP_JSON_FILE}"
 
-jq --arg a "${CONTEXT}" ".context_name = $a" "${SETUP_JSON_FILE}" > "tmp"
+jq --arg a "${CONTEXT}" ".context_name = ${a}" "${SETUP_JSON_FILE}" > "tmp"
 mv "tmp" "${SETUP_JSON_FILE}"
 
-jq --arg a "${TAG}" ".tag = $a" "${SETUP_JSON_FILE}" > "tmp"
+jq --arg a "${TAG}" ".tag = ${a}" "${SETUP_JSON_FILE}" > "tmp"
 mv "tmp" "${SETUP_JSON_FILE}"
 
-jq --arg a "${DOTENV}" ".dotenv = $a" "${SETUP_JSON_FILE}" > "tmp"
+jq --arg a "${DOTENV}" ".dotenv = ${a}" "${SETUP_JSON_FILE}" > "tmp"
 mv "tmp" "${SETUP_JSON_FILE}"
 
 jq "." "${SETUP_JSON_FILE}"
