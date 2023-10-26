@@ -4,6 +4,11 @@ SETUP_JSON_FILE="$(echo "${SETUP_JSON_FILE}" | circleci env subst)"
 SETUP_LOOKUP_KEY="$(echo "${SETUP_LOOKUP_KEY}" | circleci env subst)"
 SETUP_GIT_BRANCH="$(echo "${SETUP_GIT_BRANCH}" | circleci env subst)"
 
+echo "SETUP_CONFIGURATION_PATH = ${SETUP_CONFIGURATION_PATH}"
+echo "SETUP_JSON_FILE = ${SETUP_JSON_FILE}"
+echo "SETUP_LOOKUP_KEY = ${SETUP_LOOKUP_KEY}"
+echo "SETUP_GIT_BRANCH = ${SETUP_GIT_BRANCH}"
+
 cp "$(jq -r ".${SETUP_LOOKUP_KEY}" "${SETUP_JSON_FILE}")" "${SETUP_CONFIGURATION_PATH}"
 cat "${SETUP_JSON_FILE}"
 
@@ -40,13 +45,9 @@ then
 fi
 
 echo "BRANCH = ${BRANCH}"
-
 echo "CONTEXT = ${CONTEXT}"
-
 echo "ENVIRONMENT = ${ENVIRONMENT}"
-
 echo "DOTENV = ${DOTENV}"
-
 echo "TAG = ${TAG}"
 
 jq ".environment = ${ENVIRONMENT}" "${SETUP_JSON_FILE}" > "tmp"
