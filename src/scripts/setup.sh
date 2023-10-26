@@ -33,7 +33,7 @@ tag_main="stable"
 tag_release="latest"
 tag_staging="latest"
 
-branch=$(echo "${SETUP_GIT_BRANCH}" >> | cut -d"/" -f1)
+branch="$(echo ${SETUP_GIT_BRANCH} >> | cut -d"/" -f1)"
 echo "BRANCH = "$branch""
 
 context="contexts_$branch"
