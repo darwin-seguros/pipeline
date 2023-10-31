@@ -7,6 +7,7 @@ UPDATE_SERVICE_TAG="$(echo "${UPDATE_SERVICE_TAG}" | circleci env subst)"
 
 echo "MANIFEST = ${GIT_MANIFEST_SECRET}"
 
+npm install fs js-yaml dotenv
 node ./k8s_helpers/create_config_map.js "./.env.${UPDATE_SERVICE_DOTENV}" > configmap.yml
 
 git config --global user.email "devops@darwinseguros.com"
