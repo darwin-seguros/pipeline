@@ -25,9 +25,10 @@ steps:
       scope: '@darwin-seguros'
       auth-token: << parameters.npm_token >>
   - run:
-    name: Show NPMRC
-    command: |
-      cat ~/.npmrc
+      name: Show NPMRC
+      command: |
+        echo "Running cat ~/.npmrc"
+        cat ~/.npmrc
   - node/install-packages:
       pkg-manager: npm
   - run:
