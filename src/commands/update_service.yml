@@ -33,6 +33,8 @@ steps:
       name: Copy .npmrc to workspace
       command: |
           cp ~/.npmrc .npmrc
+  - node/install-packages:
+      pkg-manager: npm
   - aws-cli/setup
   - run:
       name: Generate configmap
