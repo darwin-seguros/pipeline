@@ -17,6 +17,12 @@ parameters:
   dotenv:
     type: string
     default: dev
+  cluster:
+    type: string
+    default: ""
+  service:
+    type: string
+    default: ""
 
 steps:
   - checkout
@@ -44,4 +50,6 @@ steps:
         UPDATE_SERVICE_IMAGE_NAME: << parameters.image_name >>
         UPDATE_SERVICE_IMAGE_TAG: << parameters.image_tag >>
         UPDATE_SERVICE_TAG: << parameters.tag >>
+        UPDATE_CLUSTER: << parameters.cluster >>
+        UPDATE_SERVICE: << parameters.service >>
       command: << include(scripts/update_service.sh) >>
