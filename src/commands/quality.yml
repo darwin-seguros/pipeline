@@ -8,6 +8,9 @@ parameters:
   sonar_key:
     type: string
     default: ""
+  sonar_token:
+    type: string
+    default: ""
 
 steps:
   - checkout
@@ -45,9 +48,12 @@ steps:
         JEST_JUNIT_OUTPUT_DIR: ./coverage/
   - store_test_results:
       path: ./coverage/
-  - sonar/scanner:
-      host_url: << parameters.sonar_url >>
-      login: << parameters.sonar_key >>
+  - sonar_scanner:
+      environment:
+        SONAR_TOKEN: << parameters.sonar_token >>
+        SONAR_PROJECT_KEY: << parameters.sonar_key >>
+        SONAR_URL: << parameters.sonar_url >>
+      command: << include(scripts/sonar_scanner.sh) >>
   - persist_to_workspace:
       root: .
       paths:
