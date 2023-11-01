@@ -29,8 +29,6 @@ steps:
       registry-prurl: //npm.pkg.github.com
       scope: '@darwin-seguros'
       auth-token: ${NPM_TOKEN}
-  - node/install-packages:
-      pkg-manager: npm
   - aws-cli/setup
   - run:
       name: Generate configmap

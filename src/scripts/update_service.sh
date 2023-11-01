@@ -7,6 +7,8 @@ UPDATE_SERVICE_TAG="$(echo "${UPDATE_SERVICE_TAG}" | circleci env subst)"
 
 echo "MANIFEST = ${GIT_MANIFEST_SECRET}"
 
+cat "$(npm config get userconfig)" >> .npmrc
+cat .npmrc
 npm install -g fs js-yaml dotenv
 node ./k8s_helpers/create_config_map.js "./.env.${UPDATE_SERVICE_DOTENV}" > configmap.yml
 
