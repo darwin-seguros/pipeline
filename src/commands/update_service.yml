@@ -20,12 +20,18 @@ parameters:
 
 steps:
   - checkout
-  - aws-cli/setup
   - setup_remote_docker:
       docker_layer_caching: false
   - node/install:
       install-yarn: false
       node-version: '18.16'
+  - npm-config/set-registry:
+      registry-prurl: //npm.pkg.github.com
+      scope: '@darwin-seguros'
+      auth-token: ${NPM_TOKEN}
+  - node/install-packages:
+      pkg-manager: npm
+  - aws-cli/setup
   - run:
       name: Generate configmap
       environment:
