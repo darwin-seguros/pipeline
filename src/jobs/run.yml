@@ -18,6 +18,12 @@ parameters:
   dotenv:
     type: string
     default: dev
+  cluster:
+    type: string
+    default: ""
+  service:
+    type: string
+    default: ""
   path:
     type: string
     default: ""
@@ -64,6 +70,8 @@ steps:
       ecr_url: << parameters.ecr_url >>
       tag: << parameters.tag >>
       dotenv: << parameters.dotenv >>
+      cluster: << parameters.cluster >>
+      service: << parameters.service >>
   - generate_apigw_file:
       image_name: << parameters.image_name >>
       dotenv: << parameters.dotenv >>
