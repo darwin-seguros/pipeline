@@ -2,6 +2,9 @@ description: |
   This command generate apigw file.
 
 parameters:
+  workspace:
+    type: string
+    default: ~/terraform
   image_name:
     type: string
     default: ""
@@ -31,7 +34,7 @@ steps:
       path: ./infra/terraform/swagger-spec.json
       destination: swagger-spec-result.json
   - persist_to_workspace:
-      root: ~/terraform-search-api
+      root: ~/<< parameters.workspace >>
       paths:
         - ./infra/terraform/swagger-spec.json
         - swagger-spec.json

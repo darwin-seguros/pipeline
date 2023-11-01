@@ -54,6 +54,9 @@ parameters:
   sonar_token:
     type: string
     default: ""
+  workspace:
+    type: string
+    default: ~/terraform
 
 steps:
   - quality:
@@ -73,6 +76,7 @@ steps:
       cluster: << parameters.cluster >>
       service: << parameters.service >>
   - generate_apigw_file:
+      workspace: << parameters.workspace >>
       image_name: << parameters.image_name >>
       dotenv: << parameters.dotenv >>
   - deploy_lambda:
