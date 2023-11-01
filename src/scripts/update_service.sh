@@ -35,4 +35,4 @@ git commit -m "Updating ${UPDATE_SERVICE_IMAGE_NAME}/${UPDATE_SERVICE_DOTENV} co
 git push
 echo "Push changes to k8s manifest repo"
 
-aws ecs update-service --cluster "${UPDATE_CLUSTER}" --service "${UPDATE_SERVICE}" --force-new-deployment > /dev/null 2>&1 
+aws ecs update-service --cluster "${UPDATE_CLUSTER}" --service "${UPDATE_SERVICE}" --force-new-deployment || exit 0
