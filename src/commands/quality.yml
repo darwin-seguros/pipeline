@@ -49,6 +49,7 @@ steps:
   - store_test_results:
       path: ./coverage/
   - run:
+      name: Run sonar scanner
       environment:
         SONAR_TOKEN: << parameters.sonar_token >>
         SONAR_PROJECT_KEY: << parameters.sonar_key >>
