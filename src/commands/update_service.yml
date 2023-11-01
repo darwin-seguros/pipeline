@@ -23,6 +23,9 @@ parameters:
   service:
     type: string
     default: ""
+  npm_token:
+    type: string
+    default: ""
 
 steps:
   - checkout
@@ -34,7 +37,7 @@ steps:
   - npm-config/set-registry:
       registry-prurl: //npm.pkg.github.com
       scope: '@darwin-seguros'
-      auth-token: ${NPM_TOKEN}
+      auth-token: << parameters.npm_token >>
   - run:
       name: Copy .npmrc to workspace
       command: |
