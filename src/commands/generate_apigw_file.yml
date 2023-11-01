@@ -2,9 +2,6 @@ description: |
   This command generate apigw file.
 
 parameters:
-  npm_token:
-    type: string
-    default: ""
   image_name:
     type: string
     default: ""
@@ -20,7 +17,7 @@ steps:
   - npm-config/set-registry:
       registry-prurl: //npm.pkg.github.com
       scope: '@darwin-seguros'
-      auth-token: << parameters.npm_token >>
+      auth-token: ${NPM_TOKEN}
   - node/install-packages:
       pkg-manager: npm
   - aws-cli/setup

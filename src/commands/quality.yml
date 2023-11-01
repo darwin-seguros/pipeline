@@ -2,9 +2,6 @@ description: |
   This command check quality of code.
 
 parameters:
-  npm_token:
-    type: string
-    default: ""
   sonar_url:
     type: string
     default: "https://sonar.dev.cloud.darwinseguros.com"
@@ -23,12 +20,7 @@ steps:
   - npm-config/set-registry:
       registry-prurl: //npm.pkg.github.com
       scope: '@darwin-seguros'
-      auth-token: << parameters.npm_token >>
-  - run:
-      name: Show NPMRC
-      command: |
-        echo "Running cat ~/.npmrc"
-        cat ~/.npmrc
+      auth-token: ${NPM_TOKEN}
   - node/install-packages:
       pkg-manager: npm
   - run:

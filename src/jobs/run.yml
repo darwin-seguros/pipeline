@@ -54,21 +54,16 @@ parameters:
   sonar_token:
     type: string
     default: ""
-  npm_token:
-    type: string
-    default: ""
 
 steps:
   - quality:
       sonar_url: << parameters.sonar_url >>
       sonar_key: << parameters.sonar_key >>
       sonar_token: << parameters.sonar_token >>
-      npm_token: << parameters.npm_token >>
   - build_application:
       image_name: << parameters.image_name >>
       image_tag: << parameters.image_tag >>
       ecr_url: << parameters.ecr_url >>
-      npm_token: << parameters.npm_token >>
   - update_service:
       image_name: << parameters.image_name >>
       image_tag: << parameters.image_tag >>
@@ -77,11 +72,9 @@ steps:
       dotenv: << parameters.dotenv >>
       cluster: << parameters.cluster >>
       service: << parameters.service >>
-      npm_token: << parameters.npm_token >>
   - generate_apigw_file:
       image_name: << parameters.image_name >>
       dotenv: << parameters.dotenv >>
-      npm_token: << parameters.npm_token >>
   - deploy_lambda:
       path: << parameters.path >>
       dotenv: << parameters.dotenv >>
