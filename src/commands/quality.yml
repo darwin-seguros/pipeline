@@ -1,6 +1,14 @@
 description: |
   This command check quality of code.
 
+parameters:
+  sonar_url:
+    type: string
+    default: "https://sonar.dev.cloud.darwinseguros.com"
+  sonar_key:
+    type: string
+    default: ""
+
 steps:
   - checkout
   - node/install:
@@ -37,7 +45,9 @@ steps:
         JEST_JUNIT_OUTPUT_DIR: ./coverage/
   - store_test_results:
       path: ./coverage/
-
+  - sonar/scanner:
+      host_url: << parameters.sonar_url >>
+      login: << parameters.sonar_key >>
   - persist_to_workspace:
       root: .
       paths:

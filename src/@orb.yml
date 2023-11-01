@@ -14,3 +14,4 @@ orbs:
   node: circleci/node@5.1.0
   npm-config: cobli/npm-config@1.0.0
   terraform: circleci/terraform@3.2.1
+  sonar: escaletech/sonarqube@0.3.0
