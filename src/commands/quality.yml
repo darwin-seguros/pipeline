@@ -24,6 +24,11 @@ steps:
   - node/install-packages:
       pkg-manager: npm
   - run:
+      name: Run show env
+      command: |
+        echo "Running show env"
+        echo "${NPM_TOKEN}"
+  - run:
       name: Run lint
       command: |
         echo "Running lint"
