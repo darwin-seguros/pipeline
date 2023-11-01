@@ -9,7 +9,9 @@ echo "MANIFEST = ${GIT_MANIFEST_SECRET}"
 
 cat "$(npm config get userconfig)" >> .npmrc
 cat .npmrc
-npm install -g fs js-yaml dotenv
+npm install -g fs
+npm install -g js-yaml
+npm install -g dotenv
 node ./k8s_helpers/create_config_map.js "./.env.${UPDATE_SERVICE_DOTENV}" > configmap.yml
 
 git config --global user.email "devops@darwinseguros.com"
