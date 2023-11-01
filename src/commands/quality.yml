@@ -48,7 +48,7 @@ steps:
         JEST_JUNIT_OUTPUT_DIR: ./coverage/
   - store_test_results:
       path: ./coverage/
-  - sonar_scanner:
+  - run:
       environment:
         SONAR_TOKEN: << parameters.sonar_token >>
         SONAR_PROJECT_KEY: << parameters.sonar_key >>
