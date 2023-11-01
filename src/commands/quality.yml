@@ -51,6 +51,7 @@ steps:
         npm run test:ci
       environment:
         JEST_JUNIT_OUTPUT_DIR: ./coverage/
+      timeout: 3600
   - store_test_results:
       path: ./coverage/
   - run:
