@@ -50,10 +50,10 @@ steps:
         echo "Running tests"
         npm run test:ci
       environment:
-        JEST_JUNIT_OUTPUT_DIR: ./coverage/
+        JEST_JUNIT_OUTPUT_DIR: ./reports/
       timeout: 3600
   - store_test_results:
-      path: ./coverage/
+      path: ./reports/
   - run:
       name: Run sonar scanner
       environment:
