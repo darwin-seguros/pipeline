@@ -10,7 +10,7 @@ UPDATE_SERVICE="$(echo "${UPDATE_SERVICE}" | circleci env subst)"
 
 echo "MANIFEST = ${GIT_MANIFEST_SECRET}"
 
-node ./k8s_helpers/create_config_map.js "./.env.${UPDATE_SERVICE_DOTENV}" > configmap.yml
+node ./k8s_helpers/create_config_map.js "./.env.${UPDATE_SERVICE_DOTENV}"
 
 git config --global user.email "devops@darwinseguros.com"
 git config --global user.name "DevOps"
