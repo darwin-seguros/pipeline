@@ -4,4 +4,4 @@ GENERATE_APIGW_FILE_IMAGE_NAME="$(echo "${GENERATE_APIGW_FILE_IMAGE_NAME}" | cir
 
 echo "Running generate swagger file"
 VPC_LINK_ID=$(aws apigateway get-vpc-links | jq -r '.items[0].id') \
-BASE_URI="https://${GENERATE_APIGW_FILE_IMAGE_NAME}.${GENERATE_APIGW_FILE_DOTENV}.cloud.darwinseguros.com" npm run generate:swagger
+SWAGGER_VERSION="${CIRCLE_BUILD_NUM}" BASE_URI="https://${GENERATE_APIGW_FILE_IMAGE_NAME}.${GENERATE_APIGW_FILE_DOTENV}.cloud.darwinseguros.com" npm run generate:swagger
