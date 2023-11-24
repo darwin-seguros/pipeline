@@ -9,6 +9,8 @@ UPDATE_CLUSTER="$(echo "${UPDATE_CLUSTER}" | circleci env subst)"
 UPDATE_SERVICE="$(echo "${UPDATE_SERVICE}" | circleci env subst)"
 
 echo "MANIFEST = ${GIT_MANIFEST_SECRET}"
+echo "CLUSTER = ${UPDATE_CLUSTER}"
+echo "SERVICE = ${UPDATE_SERVICE}"
 
 node ./k8s_helpers/create_config_map.js "./.env.${UPDATE_SERVICE_DOTENV}"
 
