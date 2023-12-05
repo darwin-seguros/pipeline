@@ -49,9 +49,9 @@ steps:
       command: |
         echo "Running tests"
         npm run test:ci
+      no_output_timeout: 60m
       environment:
         JEST_JUNIT_OUTPUT_DIR: ./reports/
-      timeout: 3600
   - store_test_results:
       path: ./reports/
   - run:
