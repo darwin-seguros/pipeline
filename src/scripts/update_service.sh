@@ -4,6 +4,7 @@ UPDATE_SERVICE_ECR_URL="$(echo "${UPDATE_SERVICE_ECR_URL}" | circleci env subst)
 UPDATE_SERVICE_IMAGE_NAME="$(echo "${UPDATE_SERVICE_IMAGE_NAME}" | circleci env subst)"
 UPDATE_SERVICE_IMAGE_TAG="$(echo "${UPDATE_SERVICE_IMAGE_TAG}" | circleci env subst)"
 UPDATE_SERVICE_TAG="$(echo "${UPDATE_SERVICE_TAG}" | circleci env subst)"
+UPDATE_SERVICE_REGION="$(echo "${UPDATE_SERVICE_REGION}" | circleci env subst)"
 
 UPDATE_CLUSTER="$(echo "${UPDATE_CLUSTER}" | circleci env subst)"
 UPDATE_SERVICE="$(echo "${UPDATE_SERVICE}" | circleci env subst)"
@@ -11,6 +12,7 @@ UPDATE_SERVICE="$(echo "${UPDATE_SERVICE}" | circleci env subst)"
 echo "MANIFEST = ${GIT_MANIFEST_SECRET}"
 echo "CLUSTER = ${UPDATE_CLUSTER}"
 echo "SERVICE = ${UPDATE_SERVICE}"
+echo "REGION = ${UPDATE_SERVICE_REGION}"
 
 node ./k8s_helpers/create_config_map.js "./.env.${UPDATE_SERVICE_DOTENV}"
 
@@ -37,4 +39,4 @@ git commit -m "Updating ${UPDATE_SERVICE_IMAGE_NAME}/${UPDATE_SERVICE_DOTENV} co
 git push
 echo "Push changes to k8s manifest repo"
 
-aws ecs update-service --cluster "${UPDATE_CLUSTER}" --service "${UPDATE_SERVICE}" --force-new-deployment || exit 0
+aws ecs update-service --region "${UPDATE_SERVICE_REGION}" --cluster "${UPDATE_CLUSTER}" --service "${UPDATE_SERVICE}" --force-new-deployment || exit 0

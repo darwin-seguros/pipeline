@@ -52,4 +52,5 @@ steps:
         UPDATE_SERVICE_TAG: << parameters.tag >>
         UPDATE_CLUSTER: << parameters.cluster >>
         UPDATE_SERVICE: << parameters.service >>
+        UPDATE_SERVICE_REGION:  ${AWS_DEFAULT_REGION}
       command: << include(scripts/update_service.sh) >>
