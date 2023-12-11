@@ -10,10 +10,9 @@ parameters:
     default: ""
 
 steps:
-  - checkout
   - aws-cli/setup
   - run:
-      name: Generate configmap
+      name: Update service
       environment:
         UPDATE_CLUSTER: << parameters.cluster >>
         UPDATE_SERVICE: << parameters.service >>
