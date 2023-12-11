@@ -1,0 +1,20 @@
+description: |
+  This command update cluster in ecs.
+
+parameters:
+  cluster:
+    type: string
+    default: ""
+  service:
+    type: string
+    default: ""
+
+steps:
+  - checkout
+  - aws-cli/setup
+  - run:
+      name: Generate configmap
+      environment:
+        UPDATE_CLUSTER: << parameters.cluster >>
+        UPDATE_SERVICE: << parameters.service >>
+      command: << include(scripts/update_cluster.sh) >>

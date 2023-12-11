@@ -73,6 +73,7 @@ steps:
       ecr_url: << parameters.ecr_url >>
       tag: << parameters.tag >>
       dotenv: << parameters.dotenv >>
+  - update_cluster:
       cluster: << parameters.cluster >>
       service: << parameters.service >>
   - generate_apigw_file:
