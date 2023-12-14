@@ -10,5 +10,4 @@ unzip -o "${HOME}/.sonar/sonar-scanner.zip" -d "${HOME}/.sonar/"
 export PATH="${SONAR_SCANNER_HOME}/bin:${PATH}"
 export SONAR_SCANNER_OPTS="-server"
 
-
 sonar-scanner -Dsonar.projectKey="${SONAR_PROJECT_KEY}" -Dsonar.sources=. -Dsonar.host.url="${SONAR_URL}"
