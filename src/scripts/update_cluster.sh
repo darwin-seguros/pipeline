@@ -6,7 +6,9 @@ UPDATE_SERVICE="$(echo "${UPDATE_SERVICE}" | circleci env subst)"
 echo "CLUSTER = ${UPDATE_CLUSTER}"
 echo "SERVICE = ${UPDATE_SERVICE}"
 
-SERVICES=$(aws ecs list-services --region "${AWS_DEFAULT_REGION}" --cluster "${UPDATE_CLUSTER}" --query "serviceArns[?starts_with(@, '${UPDATE_SERVICE}')].split('/').[-1]" --output text)
+UPDATE_SERVICE_FIRST_WORD=$(echo "$UPDATE_SERVICE" | cut -d '-' -f1)
+
+SERVICES=$(aws ecs list-services --region "${AWS_DEFAULT_REGION}" --cluster "${UPDATE_CLUSTER}" --output json | jq -r '.serviceArns[] | split("/") | .[-1] | select(startswith("'"$UPDATE_SERVICE_FIRST_WORD"'"))')
 
 for SERVICE in $SERVICES; do
     echo "Atualizando o serviço ${SERVICE}..."
