@@ -17,7 +17,12 @@ echo "Clone k8s manifest repo"
 cp -rf configmap.yml "kubernete-manifest/${UPDATE_SERVICE_IMAGE_NAME}/${UPDATE_SERVICE_DOTENV}/configmap.yml"
 echo "Update configmap on repository"
 
-sed -i 's/version: .*$/version: '"$(date +%Y%m%d%H%M%S)"'/g' "kubernete-manifest/${UPDATE_SERVICE_IMAGE_NAME}/${UPDATE_SERVICE_DOTENV}/deployment.yml"
+if grep -q "version:" "kubernete-manifest/${UPDATE_SERVICE_IMAGE_NAME}/${UPDATE_SERVICE_DOTENV}/deployment.yml"; then
+    sed -i 's/version: .*$/version: '"$(date +%Y%m%d%H%M%S)"'/g' "kubernete-manifest/${UPDATE_SERVICE_IMAGE_NAME}/${UPDATE_SERVICE_DOTENV}/deployment.yml"
+else
+    sed -i '/name:/a \  version: '"$(date +%Y%m%d%H%M%S)"'' "kubernete-manifest/${UPDATE_SERVICE_IMAGE_NAME}/${UPDATE_SERVICE_DOTENV}/deployment.yml"
+fi
+
 echo "Updated deployment on repository"
 
 aws ecr get-login-password --region "${AWS_DEFAULT_REGION}" | docker login --username AWS --password-stdin "${UPDATE_SERVICE_ECR_URL}/${UPDATE_SERVICE_IMAGE_NAME}"
