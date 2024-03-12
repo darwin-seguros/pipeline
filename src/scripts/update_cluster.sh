@@ -1,6 +1,6 @@
 #!/bin/sh
 
-UPDATE_CLUSTER="$(echo "${UPDATE_CLUSTER}" | circleci env subst)"
+UPDATE_CLUSTER="$(aws ecs list-clusters | jq -r '.clusterArns[] | split("/") | .[1]')"
 UPDATE_SERVICE="$(echo "${UPDATE_SERVICE}" | circleci env subst)"
 
 echo "CLUSTER = ${UPDATE_CLUSTER}"
