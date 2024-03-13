@@ -28,7 +28,16 @@ docker push "${UPDATE_SERVICE_ECR_URL}/${UPDATE_SERVICE_IMAGE_NAME}:${UPDATE_SER
 
 cd kubernete-manifest || return
 git pull
-git add .
-git commit -m "Updating ${UPDATE_SERVICE_IMAGE_NAME}/${UPDATE_SERVICE_DOTENV} configmap by pipeline tag: ${CIRCLE_BUILD_NUM}"
-git push
-echo "Push changes to k8s manifest repo"
+
+# Verificar se há alterações
+if [ -n "$(git status --porcelain)" ]; then
+    echo "Há alterações para comitar."
+    git add .
+    git commit -m "Updating ${UPDATE_SERVICE_IMAGE_NAME}/${UPDATE_SERVICE_DOTENV} configmap by pipeline tag: ${CIRCLE_BUILD_NUM}"
+    git push
+    echo "Push changes to k8s manifest repo"
+    exit 0
+else
+    echo "Nada para comitar."
+    exit 0
+fi
