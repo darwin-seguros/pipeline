@@ -38,7 +38,7 @@ steps:
       destination: lint_result.json
   - run:
       name: Run audit
-      command: << include(scripts/npm_audit.sh) >>
+      command: << include(scripts/run_audit.sh) >>
   - store_artifacts:
       path: audit.json
       destination: audit_result.json
