@@ -38,9 +38,7 @@ steps:
       destination: lint_result.json
   - run:
       name: Run audit
-      command: |
-        echo "Running audit"
-        npm audit --audit-level=high --json --production > audit.json
+      command: << include(scripts/npm_audit.sh) >>
   - store_artifacts:
       path: audit.json
       destination: audit_result.json
