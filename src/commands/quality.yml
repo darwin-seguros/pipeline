@@ -40,7 +40,7 @@ steps:
       name: Run audit
       command: |
         echo "Running audit"
-        npm audit > audit.json
+        npm audit --audit-level=high --json --production > audit.json
   - store_artifacts:
       path: audit.json
       destination: audit_result.json
