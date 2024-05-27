@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ "$AWS_DEFAULT_REGION" = "sa-east-1" ]; then
+    exit 0
+fi
+
 UPDATE_CLUSTER="$(echo "${UPDATE_CLUSTER}" | circleci env subst)"
 UPDATE_SERVICE="$(echo "${UPDATE_SERVICE}" | circleci env subst)"
 
