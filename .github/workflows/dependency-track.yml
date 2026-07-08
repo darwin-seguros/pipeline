@@ -12,3 +12,4 @@ jobs:
     uses: darwin-seguros/reusable-actions/.github/workflows/dependency-track.yml@main
     secrets:
       DEPENDENCY_TRACK_API_KEY: ${{ secrets.DEPENDENCY_TRACK_API_KEY }}
+      DEFECTDOJO_API_KEY: ${{ secrets.DEFECTDOJO_API_KEY }}
