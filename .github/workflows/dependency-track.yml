@@ -1,0 +1,14 @@
+name: SBOM to Dependency-Track
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+
+jobs:
+  sbom:
+    uses: darwin-seguros/reusable-actions/.github/workflows/dependency-track.yml@main
+    secrets:
+      DEPENDENCY_TRACK_API_KEY: ${{ secrets.DEPENDENCY_TRACK_API_KEY }}
